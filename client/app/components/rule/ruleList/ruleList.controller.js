@@ -12,12 +12,12 @@ class RuleListController {
   }
 
   selectMe(rule) {
-    console.log('selected ' + JSON.stringify(rule))
     this.selectedRule = rule;
   }
 
   updateRule(event){
-    this.selectedRule = event.rule
+    angular.copy(event.rule, this.selectedRule)
+    
   }
 }
 

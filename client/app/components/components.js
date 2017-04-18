@@ -7,7 +7,6 @@ import AddRule from './rule/addRule/addRule'
 
 let componentModule = angular.module('app.components', [
   Home,
-  About,
   RuleList,
   RuleItem,
   AddRule

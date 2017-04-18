@@ -41,7 +41,7 @@ class AddRuleController {
     };
 
   reset() {
-    this.newRule = angular.copy(this.blank);
+    this.rule = angular.copy(this.original);
   }
 
   submit() {
