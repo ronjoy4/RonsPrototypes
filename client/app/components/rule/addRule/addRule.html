@@ -1,0 +1,24 @@
+<div>
+  <h3>{{ $ctrl.name }}</h3>
+  <form class="simple-form" >
+    <label>Name: <input type="text" ng-model="$ctrl.rule.name" /></label><br /><br />
+    
+    <label>If  
+    <select ng-model="$ctrl.rule.inventorySourceType"  >
+      <option ng-repeat="type in $ctrl.typeOptions" ng-value="type.displayName" > {{type.displayName}} </option>
+    </select>
+    </label> <br /><br />
+
+    <select ng-model="$ctrl.rule.inventorySourceAttribute"  >
+      <option ng-repeat="type in $ctrl.attributeOptions" ng-value="type.displayName" > {{type.displayName}} </option>
+    </select>
+    <select ng-model="$ctrl.rule.inclusionIndicator"  >
+      <option ng-repeat="type in $ctrl.indicatorOptions" ng-value="type.displayName" > {{type.displayName}} </option>
+    </select>
+    <input type="text" ng-model="$ctrl.rule.inventorySourceAttributeCompareValue" /> <br/> <br/>
+
+    <label>Assign To Tenant: <input type="text" ng-model="$ctrl.rule.actionResult" /></label><br /><br />
+
+    <input type="submit" ng-click="$ctrl.submit()"  ng-value="$ctrl.mode == 'edit' ? 'Update' : 'Add'"> </button>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+<section>
+  <h3>List of things</h3>
+  <ul>
+    <li ng-repeat="rule in $ctrl.rulez track by $index">
+      <span>
+        <rule-item rule="rule" > </rule-item> 
+        <button ng-click="$ctrl.selectMe(rule)" > Select </button>
+      </span>
+    </li>
+  </ul>
+
+  <br/>
+  <br/>
+  <br/>
+  <add-rule> </add-rule>
+  <add-rule rule="$ctrl.selectedRule" on-update="$ctrl.updateRule($event);" ></add-rule>
+</section>

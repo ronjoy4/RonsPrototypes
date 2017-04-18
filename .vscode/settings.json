@@ -1,0 +1,18 @@
+{
+    "sync.gist": "2352c67c51ed627397ea55ae1322b8b0",
+    "sync.lastUpload": "2017-02-22T15:12:56.973Z",
+    "sync.autoDownload": true,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "2017-04-17T14:43:32.439Z",
+    "sync.version": 262,
+    "sync.showSummary": true,
+    "sync.forceDownload": false,
+    "sync.workspaceSync": false,
+    "sync.anonymousGist": false,
+    "terminal.integrated.rightClickCopyPaste": false,
+    "files.associations": {
+        "*.co": "javascript"
+    },
+    "sync.host": "",
+    "sync.pathPrefix": ""
+}
