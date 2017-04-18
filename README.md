@@ -1,5 +1,8 @@
 <p align="center">
-  <a href="http://courses.angularclass.com/courses/angular-2-fundamentals" target="_blank">
+  Note: many of the components are being copied over from codepen for eventual use in an enterprise application. Do not expect entirely correct interactions as corners have been cut. The main thing we want here is basic component structure and an ng6 -> angular 2 friendly architecture.
+</p>
+
+<p align="center">
   Here is the yeoman project to generate the initial scaffolding. It includes a quick way of generating the component file structure.
 </p>
 
