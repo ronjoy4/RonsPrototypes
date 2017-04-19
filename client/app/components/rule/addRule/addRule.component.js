@@ -6,7 +6,8 @@ let addRuleComponent = {
   restrict: 'E',
   bindings: {
     rule: '<',
-    onUpdate: '&'
+    onUpdate: '&',
+    onAdd: '&'
   },
   template,
   controller

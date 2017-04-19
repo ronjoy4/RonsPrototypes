@@ -1,9 +1,8 @@
 class RuleListController {
-  
+
   constructor(RuleService) {
     'ngInject';
-    this.ruleService = RuleService;    
-    console.log(this.ruleService);
+    this.ruleService = RuleService;
   }
   $onInit() {
     this.rulez = this.ruleService.getRules()
@@ -15,9 +14,24 @@ class RuleListController {
     this.selectedRule = rule;
   }
 
-  updateRule(event){
+  updateRule(event) {    
     angular.copy(event.rule, this.selectedRule)
-    
+  }
+
+  addRule(event) {
+    this.rulez.push(event.rule)
+  }
+
+  removeRule(index) {
+    this.rulez.splice(index, 1);
+    this.ruleService.removeRule(index);
+  }
+
+
+  writeToConsole() {
+    this.rulez.forEach((rule) => {
+      console.log(JSON.stringify(rule));
+    })
   }
 }
 

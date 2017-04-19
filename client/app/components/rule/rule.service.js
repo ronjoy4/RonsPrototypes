@@ -26,7 +26,7 @@ class RuleService {
   }
 
   getRules() {
-    return this.rulez;
+    return angular.copy(this.rulez);
   }
 
   addRule(rule) {
@@ -35,6 +35,10 @@ class RuleService {
 
   updateRule(rule) {
     this.rulez[rule] = rule
+  }
+
+  removeRule(index) {
+    this.rulez.splice(index, 1);
   }
 
   // getTodos() {

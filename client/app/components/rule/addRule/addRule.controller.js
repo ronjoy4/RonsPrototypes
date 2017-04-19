@@ -18,7 +18,20 @@ class AddRuleController {
     else {
       this.name = 'New Tenant Assignment Rule';
       this.mode = "add";
-      this.rule = {
+      this.initializeRule()
+    }
+    this.original = angular.copy(this.rule)
+    //this.newRule = { name:"test" }
+  }
+
+  $onChanges = function (changes) {
+    	if (changes.rule) {
+        this.rule = angular.copy(changes.rule.currentValue);
+      }
+    }
+  
+  initializeRule() {
+     this.rule = {
         name: "",
         description: "",
         inventorySourceType: "",
@@ -29,16 +42,7 @@ class AddRuleController {
         actionResult: "",
         priority: 2
       }
-    }
-    this.original = angular.copy(this.rule)
-    //this.newRule = { name:"test" }
   }
-
-  $onChanges = function (changes) {
-    	if (changes.rule) {
-        this.rule = angular.copy(changes.rule.currentValue);
-      }
-    };
 
   reset() {
     this.rule = angular.copy(this.original);
@@ -46,7 +50,14 @@ class AddRuleController {
 
   submit() {
     if (this.mode === 'add') {
-      this.ruleService.addRule(angular.copy(this.rule));
+      let copyRule = angular.copy(this.rule)
+      this.ruleService.addRule(copyRule);
+      this.onAdd({
+        $event: {
+          rule: copyRule
+        }
+      });
+      this.initializeRule()
     } 
     else{
       this.ruleService.updateRule(this.rule);

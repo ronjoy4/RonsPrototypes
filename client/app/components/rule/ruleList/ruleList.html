@@ -5,6 +5,7 @@
       <span>
         <rule-item rule="rule" > </rule-item> 
         <button ng-click="$ctrl.selectMe(rule)" > Select </button>
+        <button ng-click="$ctrl.removeRule($index)" > Remove </button>
       </span>
     </li>
   </ul>
@@ -12,6 +13,6 @@
   <br/>
   <br/>
   <br/>
-  <add-rule> </add-rule>
-  <add-rule rule="$ctrl.selectedRule" on-update="$ctrl.updateRule($event);" ></add-rule>
+  <add-rule on-add="$ctrl.addRule($event);"> </add-rule>
+  <add-rule rule="$ctrl.selectedRule" on-update="$ctrl.updateRule($event);"  ></add-rule>
 </section>
