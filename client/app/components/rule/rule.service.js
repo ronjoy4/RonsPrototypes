@@ -11,7 +11,8 @@ class RuleService {
         inventorySourceAttributeCompareValue: "ledmd110_SG",
         action: "Assign to Tenant",
         actionResult: "Do Something",
-        priority: 2
+        priority: 2,
+        type: "TenantAssignment"
       },
       {
         name: "VMAX to QA",
@@ -20,12 +21,26 @@ class RuleService {
         inclusionIndicator: "Equals",
         inventorySourceAttributeCompareValue: "baochun",
         action: "Assign to Tenant",
-        actionResult: "QA"
+        actionResult: "QA",
+        type: "TenantAssignment"        
+      },
+       {
+        name: "Group Marketing VMs",
+        inventorySourceType: "Virtual Machine",
+        inventorySourceAttribute: "folder",
+        inclusionIndicator: "contains",
+        inventorySourceAttributeCompareValue: "marketing",
+        action: "move to group",
+        actionResult: "Marketing VMs",
+        type: "AssetGrouping"
       }
     ];
   }
 
   getRules() {
+    /*return $http.get(`${API.url}/restful/path`)
+      .then(resp => data = resp.data);*/
+    // use angular copy to similuate getting data from an external source.
     return angular.copy(this.rulez);
   }
 

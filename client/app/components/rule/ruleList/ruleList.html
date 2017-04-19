@@ -1,7 +1,18 @@
 <section>
-  <h3>List of things</h3>
+  <h3>Asset Grouping</h3>
   <ul>
-    <li ng-repeat="rule in $ctrl.rulez track by $index">
+    <li ng-repeat="rule in $ctrl.rulez | filter:{type:'AssetGrouping'}  track by $index">
+      <span>
+        <rule-item rule="rule" > </rule-item> 
+        <button ng-click="$ctrl.selectMe(rule)" > Select </button>
+        <button ng-click="$ctrl.removeRule($index)" > Remove </button>
+      </span>
+    </li>
+  </ul>
+
+  <h3>Tenant Assignment Rules</h3>
+  <ul>
+    <li ng-repeat="rule in $ctrl.rulez | filter:{type:'TenantAssignment'}  track by $index">
       <span>
         <rule-item rule="rule" > </rule-item> 
         <button ng-click="$ctrl.selectMe(rule)" > Select </button>
@@ -14,5 +25,5 @@
   <br/>
   <br/>
   <add-rule on-add="$ctrl.addRule($event);"> </add-rule>
-  <add-rule rule="$ctrl.selectedRule" on-update="$ctrl.updateRule($event);"  ></add-rule>
+  <add-rule rule="$ctrl.selectedRule" on-update="$ctrl.updateRule($event);"></add-rule>
 </section>

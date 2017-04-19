@@ -40,7 +40,8 @@ class AddRuleController {
         inventorySourceAttributeCompareValue: "",
         action: "Assign to Tenant",
         actionResult: "",
-        priority: 2
+        priority: 2,
+        type: 'TenantAssignment'
       }
   }
 

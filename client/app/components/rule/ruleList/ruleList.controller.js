@@ -3,6 +3,7 @@ class RuleListController {
   constructor(RuleService) {
     'ngInject';
     this.ruleService = RuleService;
+    //this.tenantFilter = {type: "TenantAssignment"}
   }
   $onInit() {
     this.rulez = this.ruleService.getRules()
@@ -26,7 +27,6 @@ class RuleListController {
     this.rulez.splice(index, 1);
     this.ruleService.removeRule(index);
   }
-
 
   writeToConsole() {
     this.rulez.forEach((rule) => {

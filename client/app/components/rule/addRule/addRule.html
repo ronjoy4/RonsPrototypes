@@ -17,7 +17,7 @@
     </select>
     <input type="text" ng-model="$ctrl.rule.inventorySourceAttributeCompareValue" /> <br/> <br/>
 
-    <label>Assign To Tenant: <input type="text" ng-model="$ctrl.rule.actionResult" /></label><br /><br />
+    <label >{{$ctrl.rule.type == 'TenantAssignment' ? 'Assign to Tenant' : 'Move to Group'}}: <input type="text" ng-model="$ctrl.rule.actionResult" /></label><br /><br />
 
     <input type="submit" ng-click="$ctrl.submit()"  ng-value="$ctrl.mode == 'edit' ? 'Update' : 'Add'"> </button>
   </div>
